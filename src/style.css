@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  color: var(--dark);
+}
+
+:root {
+  --accent: #ec1b5b;
+  --dark: #603813;
+  --lgt-bg: #fcfcfc;
+}
+header {
+  background: #ec1b5b;
+  width: 100%;
+  height: 6vh;
+  color: #f2cbd7;
+}
+
+.top-header {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.top-header p {
+  position: absolute;
+  right: 0;
+  letter-spacing: 3px;
+  font-weight: bolder;
+  color: #f5dce4;
+}
+.inner-container {
+  width: 1280px;
+  margin: 0 auto;
+}
+.hero {
+  height: 94vh;
+  background: url("imgs/hero.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+}
+.content-container {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  top: 10%;
+}
+nav li {
+  display: inline-block;
+  list-style: none;
+  padding: 0 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  font-size: 1rem;
+}
+
+.socials {
+  position: absolute;
+  right: 0;
+  top: 10%;
+}
+.socials i {
+  padding: 0 1rem;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.hero-logo {
+  width: 35rem;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#scroll-down {
+  position: absolute;
+  color: #fff;
+  font-size: 2rem;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* -----------------------------------about----------------------------------------------- */
+#about {
+  width: 100%;
+  background: url("imgs/papyrus.png");
+  padding: 10rem 0;
+}
+
+.about-container {
+  height: 100%;
+  margin: 0 auto;
+  background: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  position: relative;
+  box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.4);
+}
+.side-banner {
+  position: absolute;
+  left: -6%;
+  top: 11%;
+  padding: 1rem 5rem;
+  transform: rotate(315deg);
+  font-size: 1.5rem;
+  background: var(--accent);
+  color: #f5dce4;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+#about h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  position: relative;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  letter-spacing: 3px;
+}
+
+#about h1::after {
+  content: "";
+  position: absolute;
+  width: 5%;
+  height: 3px;
+  border-radius: 10px;
+  bottom: -40%;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--accent);
+}
+
+.about-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 6rem;
+  padding-bottom: 5rem;
+}
+.icon {
+  filter: invert(24%) sepia(82%) saturate(6113%) hue-rotate(332deg)
+    brightness(96%) contrast(93%);
+  width: 60%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  width: 7rem;
+  height: 7rem;
+  background: #fff;
+  border-radius: 50%;
+  filter: drop-shadow(2px 2px 5px rgb(182, 182, 182));
+  position: relative;
+}
+.about-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-card:nth-child(2) {
+  border-left: 3px solid #f8f8f8;
+  border-right: 3px solid #f1f1f1;
+}
+.about-card h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.about-card p {
+  width: 60%;
+}
+
+/* -----------------------------------------------shop------------------------
+ */
+
+#shop {
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+  background-color: var(--lgt-bg);
+  padding: 10rem 0;
+}
+
+.shop-banner {
+  width: 110%;
+  top: -0.5%;
+  position: absolute;
+  right: -5%;
+}
+
+.shop-container {
+  margin-top: 10rem;
+  display: flex;
+}
+
+.shop-container img {
+  width: 55%;
+  box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.shop-text {
+  background-color: #fff;
+  padding: 3rem 3rem 10rem 3rem;
+  height: 80%;
+  margin: auto 0 auto -5rem;
+}
+
+.shop-text h2 {
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.shop-text h2::after {
+  position: absolute;
+  content: "";
+  width: 10%;
+  height: 3.5px;
+  background-color: var(--accent);
+  border-radius: 10px;
+  bottom: -20%;
+  left: 0;
+}
+/* -----------------------------------------carousel----------------------------- */
+
+#img-carousel {
+  height: 70vh;
+  background-position: center;
+  background-image: url(imgs/temp.jpg);
+  background-size: cover;
+}
