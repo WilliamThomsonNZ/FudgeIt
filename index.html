@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="icon" href="src/imgs/Logo/main-logo.png" />
     <title>Fudge It</title>
   </head>
   <body>
@@ -42,9 +43,9 @@
           </div>
         </div>
       </section>
-      <section id="about">
+      <section id="about" class="pattern">
         <div class="inner-container about-container">
-          <h1>We Make Awesome Fudge!</h1>
+          <h2>We Make Awesome Fudge!</h2>
           <div class="side-banner">Free Samples</div>
           <div class="about-grid">
             <div class="about-card">
@@ -90,7 +91,6 @@
       <section id="shop">
         <img src="src/imgs/banner.svg" alt="Shop Banner" class="shop-banner" />
         <div class="inner-container shop-container">
-          <img src="src/imgs/shop-demo.jpg" alt="Fudge It Shop" />
           <div class="shop-text">
             <h2>The Shop</h2>
             <p>
@@ -102,17 +102,18 @@
               mollitia dicta deleniti quo dolore magni! Quasi.
             </p>
           </div>
+          <img src="src/imgs/shop-demo.jpg" alt="Fudge It Shop" />
         </div>
       </section>
       <section id="img-carousel"></section>
-      <section id="contact">
-        <div class="contact-form">
+      <section id="contact" class="pattern">
+        <div class="inner-container about-container contact-form-container">
           <h2>Get in touch</h2>
           <p>
             Please fill out the form below or email us at
             <a href="#">sales@fudgeit.co.nz</a>
           </p>
-          <form>
+          <form class="contact-form">
             <label>
               Full Name*
               <input type="text" name="name" />
@@ -125,10 +126,11 @@
               Email*
               <input type="Email" name="email" />
             </label>
-            <label>
+            <label class="message-box">
               Message*
               <textarea name="message"></textarea>
             </label>
+            <button>Send</button>
           </form>
         </div>
       </section>
@@ -136,7 +138,7 @@
     <footer>
       <div class="inner-container">
         <div class="footer-grid">
-          <div class="sub-logo">Fudge It</div>
+          <div class="sub-logo"><h2>Fudge It</h2></div>
           <div class="address-details">
             <h3>Address</h3>
             <p>
@@ -150,14 +152,19 @@
           <div class="contact-details">
             <h3>Contact</h3>
             <a href="#">Email: sales@fudgeit.co.nz</a>
+            <div class="footer-socials">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
         </div>
+
         <hr />
         <div class="lower-footer">
           <p>&copy; 2020 Fudge It. All rights reserved</p>
           <p>
             Site by
-            <a href="#">W</a>
+            <a href="https://williamthomson.co.nz">W</a>
           </p>
         </div>
       </div>

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 * {
   padding: 0;
@@ -44,6 +45,7 @@ header {
   height: 94vh;
   background: url("imgs/hero.jpg");
   background-position: center;
+  background-attachment: fixed;
   background-size: cover;
 }
 .overlay {
@@ -76,6 +78,9 @@ nav a {
   font-size: 1rem;
 }
 
+nav a:hover {
+  margin-bottom: 1rem;
+}
 .socials {
   position: absolute;
   right: 0;
@@ -85,8 +90,13 @@ nav a {
   padding: 0 1rem;
   color: #fff;
   font-size: 2rem;
+  transition: all 0.3s ease;
 }
 
+.socials i:hover {
+  color: var(--accent);
+  cursor: pointer;
+}
 .hero-logo {
   width: 35rem;
   position: absolute;
@@ -99,13 +109,20 @@ nav a {
   position: absolute;
   color: #fff;
   font-size: 2rem;
+  margin-top: 1rem;
+  padding: 2rem;
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: bounce 1.5s infinite;
 }
 
+#scroll-down:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
 /* -----------------------------------about----------------------------------------------- */
-#about {
+.pattern {
   width: 100%;
   background: url("imgs/papyrus.png");
   padding: 10rem 0;
@@ -134,7 +151,7 @@ nav a {
   font-weight: bold;
   letter-spacing: 5px;
 }
-#about h1 {
+.pattern h2 {
   font-weight: bold;
   font-size: 2.5rem;
   position: relative;
@@ -143,7 +160,7 @@ nav a {
   letter-spacing: 3px;
 }
 
-#about h1::after {
+.pattern h2::after {
   content: "";
   position: absolute;
   width: 5%;
@@ -259,4 +276,123 @@ nav a {
   background-position: center;
   background-image: url(imgs/temp.jpg);
   background-size: cover;
+}
+
+/* ---------------------------form--------------------------------------------- */
+
+.pattern a {
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#contact p {
+  margin-bottom: 2rem;
+}
+.contact-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  border-bottom: 2px solid #f1f1f1;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  margin-top: 1rem;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom: 2px solid var(--dark);
+}
+
+.contact-form-container {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 4rem;
+}
+
+.contact-form button {
+  color: #f5dce4;
+  background-color: var(--accent);
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  margin-right: 100%;
+}
+
+/* ----------------------------------------footer---------------------- */
+
+footer {
+  background: var(--lgt-bg);
+  min-height: 40vh;
+  padding: 5rem 0;
+  color: var(--dark);
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+}
+
+.footer-grid p {
+  color: #929292;
+  line-height: 1.8rem;
+}
+
+.footer-grid h3 {
+  margin-bottom: 0.5rem;
+}
+.sub-logo h2 {
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+}
+.contact-details {
+  position: relative;
+}
+
+.contact-details a {
+  text-decoration: none;
+  color: #929292;
+}
+.footer-socials {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-socials i {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #929292;
+}
+.lower-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.lower-footer a {
+  text-decoration: none;
+  font-family: "Pacifico", cursive;
+}
+@keyframes bounce {
+  25%,
+  75% {
+    margin-top: -1rem;
+  }
+  50%,
+  100% {
+    margin-top: 1rem;
+  }
 }
