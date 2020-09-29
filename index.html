@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="icon" href="src/imgs/Logo/main-logo.png" />
     <title>Fudge It</title>
   </head>
@@ -25,26 +26,36 @@
           <div class="content-container">
             <nav>
               <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">The Shop</a></li>
-                <li><a href="#">Contact</a></li>
+                <li>
+                  <a href="#" class="nav-animation">About</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-animation">The Shop</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-animation">Contact</a>
+                </li>
               </ul>
             </nav>
             <div class="socials">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook i-animation"></i></a>
+              <a href="#"><i class="fab fa-instagram i-animation"></i></a>
             </div>
             <img
               src="src/imgs/Logo/main-logo.png"
               alt="Fudge It logo"
               class="hero-logo"
             />
-            <i class="fas fa-angle-double-down" id="scroll-down"></i>
+            <div class="scroll-container">
+              <a href="#about"
+                ><i class="fas fa-angle-double-down" id="scroll-down"></i
+              ></a>
+            </div>
           </div>
         </div>
       </section>
       <section id="about" class="pattern">
-        <div class="inner-container about-container">
+        <div class="inner-container about-container" data-aos="fade-up">
           <h2>We Make Awesome Fudge!</h2>
           <div class="side-banner">Free Samples</div>
           <div class="about-grid">
@@ -91,7 +102,7 @@
       <section id="shop">
         <img src="src/imgs/banner.svg" alt="Shop Banner" class="shop-banner" />
         <div class="inner-container shop-container">
-          <div class="shop-text">
+          <div class="shop-text" data-aos="fade-left">
             <h2>The Shop</h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus
@@ -102,12 +113,19 @@
               mollitia dicta deleniti quo dolore magni! Quasi.
             </p>
           </div>
-          <img src="src/imgs/shop-demo.jpg" alt="Fudge It Shop" />
+          <img
+            src="src/imgs/shop-demo.jpg"
+            alt="Fudge It Shop"
+            data-aos="fade-right"
+          />
         </div>
       </section>
       <section id="img-carousel"></section>
       <section id="contact" class="pattern">
-        <div class="inner-container about-container contact-form-container">
+        <div
+          class="inner-container about-container contact-form-container"
+          data-aos="fade-up"
+        >
           <h2>Get in touch</h2>
           <p>
             Please fill out the form below or email us at
@@ -169,5 +187,16 @@
         </div>
       </div>
     </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="src/main.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
