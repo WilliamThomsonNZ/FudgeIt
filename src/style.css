@@ -48,6 +48,21 @@ header {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  position: relative;
+}
+
+.coming-soon-banner {
+  background: #fff;
+  padding: 1.5rem 12rem;
+  position: absolute;
+  top: 2rem;
+  left: -10rem;
+  transform: rotate(320deg);
+}
+
+.coming-soon-banner h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
 }
 .overlay {
   background: rgba(0, 0, 0, 0.5);
@@ -263,7 +278,7 @@ nav a:hover {
   background-color: #fff;
   padding: 3rem 3rem 10rem 3rem;
   height: 80%;
-  margin: auto 0 auto -5rem;
+  margin: auto 0;
 }
 
 .shop-text h2 {
@@ -287,9 +302,56 @@ nav a:hover {
 
 #img-carousel {
   height: 70vh;
-  background-position: center;
-  background-image: url(imgs/temp.jpg);
-  background-size: cover;
+
+  background-color: white;
+}
+.img-grid {
+  display: grid;
+  grid-template-areas:
+    "one one two two five five six seven"
+    "one one three four five five eight eight";
+  gap: 10px;
+  height: 100%;
+}
+
+.img1 {
+  grid-area: one;
+  background: url(imgs/1.jpg);
+  background-position: bottom center;
+}
+.img2 {
+  grid-area: two;
+  background-color: turquoise;
+}
+
+.img3 {
+  grid-area: three;
+  background-color: turquoise;
+}
+
+.img4 {
+  grid-area: four;
+  background-color: turquoise;
+}
+
+.img5 {
+  grid-area: five;
+  background-color: turquoise;
+}
+
+.img6 {
+  grid-area: six;
+  background-color: turquoise;
+}
+
+.img7 {
+  grid-area: seven;
+  background-color: turquoise;
+}
+
+.img8 {
+  grid-area: eight;
+  background-color: turquoise;
 }
 
 /* ---------------------------form--------------------------------------------- */
@@ -347,7 +409,7 @@ nav a:hover {
 
 footer {
   background: var(--lgt-bg);
-  min-height: 40vh;
+
   padding: 5rem 0;
   color: var(--dark);
 }
@@ -407,5 +469,61 @@ footer {
 
   100% {
     transform: translateY(0%);
+  }
+}
+
+/* 
+-----------------media----------------------- */
+
+@media (max-width: 1400px) {
+  .img-grid {
+    grid-template-areas:
+      "one one two two"
+      "one one three four";
+  }
+
+  .img5,
+  .img6,
+  .img7,
+  .img8 {
+    display: none;
+  }
+  .coming-soon-banner {
+    left: -8%;
+  }
+  .inner-container {
+    width: 1024px;
+  }
+  .shop-container {
+    margin-top: 5rem;
+  }
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .inner-container {
+    width: 850px;
+  }
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 850px) {
+  .inner-container {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .img-grid {
+    grid-template-areas:
+      "two two"
+      "three four";
+  }
+
+  .img1 {
+    display: none;
   }
 }
