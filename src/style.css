@@ -27,13 +27,12 @@ header {
   height: 100%;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
 
 .top-header p {
-  position: absolute;
-  right: 0;
   letter-spacing: 3px;
   font-weight: bolder;
   color: #f5dce4;
@@ -51,19 +50,6 @@ header {
   position: relative;
 }
 
-.coming-soon-banner {
-  background: #fff;
-  padding: 1.5rem 12rem;
-  position: absolute;
-  top: 2rem;
-  left: -10rem;
-  transform: rotate(320deg);
-}
-
-.coming-soon-banner h3 {
-  color: var(--accent);
-  font-size: 1.2rem;
-}
 .overlay {
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
@@ -75,7 +61,52 @@ header {
   margin: 0 auto;
   position: relative;
 }
+.pop-menu {
+  z-index: 500001;
+  position: absolute;
+  right: 0;
+  top: 10%;
+  width: 40px;
+  height: 30px;
+  display: none;
+  align-items: center;
+}
+.pop-menu:hover {
+  cursor: pointer;
+}
+.pop-menu:focus {
+  outline: var(--grytxt) 2px solid;
+}
+.line {
+  position: relative;
+  width: 50%;
+  margin-left: 50%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+}
 
+.line::before {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  width: 150%;
+  content: "";
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.line::after {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  width: 150%;
+  content: "";
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+}
 nav {
   position: absolute;
   top: 10%;
@@ -123,7 +154,9 @@ nav a:hover {
   cursor: pointer;
 }
 .hero-logo {
-  width: 35rem;
+  width: 35%;
+  max-width: 800px;
+  min-width: 20rem;
   position: absolute;
   top: 40%;
   left: 50%;
@@ -165,7 +198,7 @@ nav a:hover {
   padding: 2rem;
   border-radius: 1.5rem;
   position: relative;
-  box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.4); */
 }
 .side-banner {
   position: absolute;
@@ -262,6 +295,7 @@ nav a:hover {
   top: -0.5%;
   position: absolute;
   right: -5%;
+  overflow: hidden;
 }
 
 .shop-container {
@@ -409,8 +443,7 @@ nav a:hover {
 
 footer {
   background: var(--lgt-bg);
-
-  padding: 5rem 0;
+  padding: 5rem 0 2rem 0;
   color: var(--dark);
 }
 
@@ -507,13 +540,61 @@ footer {
     width: 850px;
   }
   html {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 850px) {
+  .about-grid {
+    display: block;
+  }
+  .about-container {
+    width: 70%;
+  }
+
+  .side-banner {
+    display: none;
+  }
+  .about-card:nth-child(2) {
+    border: none;
+  }
+  .circle {
+    margin-top: 2rem;
+  }
+  .top-header {
+    width: 90%;
+  }
+
+  .content-container {
+    width: 90%;
+  }
   .inner-container {
-    width: 100%;
+    width: 90%;
+  }
+  .shop-banner {
+    width: 100rem;
+    display: none;
+  }
+  .shop-container {
+    display: block;
+    overflow: hidden;
+  }
+  .shop-container img {
+    display: none;
+  }
+  .shop-text {
+    width: 70%;
+    margin: 0 auto;
+    padding: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  nav,
+  .socials {
+    display: none;
+  }
+  .pop-menu {
+    display: block;
   }
 }
 @media (max-width: 500px) {
@@ -522,8 +603,20 @@ footer {
       "two two"
       "three four";
   }
-
+  .about-container {
+    width: 100%;
+  }
   .img1 {
     display: none;
+  }
+  .top-header p:last-child {
+    display: none;
+  }
+  .hero-logo {
+    width: 20rem;
+  }
+
+  .about-card p {
+    width: 90%;
   }
 }
