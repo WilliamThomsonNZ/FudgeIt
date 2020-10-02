@@ -61,8 +61,53 @@ header {
   margin: 0 auto;
   position: relative;
 }
+
+/* ----------------------------------------MOBILE MENU------------------------ */
+.side-nav {
+  text-align: center;
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  transition: all 0.4s linear;
+  z-index: 5000;
+}
+.side-nav ul {
+  margin-top: 7rem;
+}
+.side-nav li {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.side-nav a {
+  color: #000;
+  text-decoration: none;
+
+  font-size: 2rem;
+  transition: all 0.1s ease;
+}
+
+#close-btn {
+  position: absolute;
+  display: none;
+  right: 5%;
+  top: 2%;
+  font-size: 2rem;
+  color: var(--accent);
+}
+#side-list {
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+#side-list p {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
 .pop-menu {
-  z-index: 500001;
   position: absolute;
   right: 0;
   top: 10%;
@@ -73,6 +118,13 @@ header {
 }
 .pop-menu:hover {
   cursor: pointer;
+}
+.pop-icons {
+  display: inline-block;
+  padding-right: 0.5rem;
+}
+.pop-icons i {
+  color: #000;
 }
 .pop-menu:focus {
   outline: var(--grytxt) 2px solid;
@@ -116,8 +168,9 @@ nav {
 nav li {
   display: inline-block;
   list-style: none;
-  padding: 0 1rem;
+  padding-right: 2rem;
 }
+
 .nav-animation,
 .i-animation {
   transform: translateY(-400%);
@@ -133,9 +186,6 @@ nav a {
   transition: all 0.5s ease;
 }
 
-nav a:hover {
-  margin-bottom: 1rem;
-}
 .socials {
   position: absolute;
   right: 0;
@@ -149,7 +199,8 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-.socials i:hover {
+.socials i:hover,
+nav a:hover {
   color: var(--accent);
   cursor: pointer;
 }
@@ -192,13 +243,15 @@ nav a:hover {
 
 .about-container {
   height: 100%;
+
   margin: 0 auto;
   background: #fff;
   text-align: center;
   padding: 2rem;
   border-radius: 1.5rem;
   position: relative;
-  /* box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.4); */
+
+  box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.4);
 }
 .side-banner {
   position: absolute;
@@ -212,6 +265,7 @@ nav a:hover {
   border-radius: 10px;
   font-weight: bold;
   letter-spacing: 5px;
+  z-index: 99;
 }
 .pattern h2 {
   font-weight: bold;
@@ -344,48 +398,55 @@ nav a:hover {
   grid-template-areas:
     "one one two two five five six seven"
     "one one three four five five eight eight";
-  gap: 10px;
+  gap: 15px;
   height: 100%;
 }
 
 .img1 {
   grid-area: one;
-  background: url(imgs/1.jpg);
+  background: url(imgs/grid/1-min.jpg);
   background-position: bottom center;
 }
 .img2 {
   grid-area: two;
-  background-color: turquoise;
+  background: url(imgs/grid/2-min.jpg);
+  background-size: cover;
 }
 
 .img3 {
   grid-area: three;
-  background-color: turquoise;
+  background: url(imgs/grid/3-min.jpg);
+  background-size: cover;
 }
 
 .img4 {
   grid-area: four;
-  background-color: turquoise;
+  background: url(imgs/grid/4-min.jpg);
+  background-size: cover;
 }
 
 .img5 {
   grid-area: five;
-  background-color: turquoise;
+  background: url(imgs/grid/5-min.jpg);
+  background-size: cover;
 }
 
 .img6 {
   grid-area: six;
-  background-color: turquoise;
+  background: url(imgs/grid/6-min.jpg);
+  background-size: cover;
 }
 
 .img7 {
   grid-area: seven;
-  background-color: turquoise;
+  background: url(imgs/grid/7-min.jpg);
+  background-size: cover;
 }
 
 .img8 {
   grid-area: eight;
-  background-color: turquoise;
+  background: url(imgs/grid/8-min.jpg);
+  background-size: cover;
 }
 
 /* ---------------------------form--------------------------------------------- */
@@ -550,6 +611,7 @@ footer {
   }
   .about-container {
     width: 70%;
+    overflow: hidden;
   }
 
   .side-banner {
@@ -573,7 +635,6 @@ footer {
   }
   .shop-banner {
     width: 100rem;
-    display: none;
   }
   .shop-container {
     display: block;
@@ -583,7 +644,7 @@ footer {
     display: none;
   }
   .shop-text {
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     padding: 3rem;
   }
@@ -596,13 +657,16 @@ footer {
   .pop-menu {
     display: block;
   }
-}
-@media (max-width: 500px) {
   .img-grid {
     grid-template-areas:
       "two two"
       "three four";
   }
+  .img1 {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
   .about-container {
     width: 100%;
   }
@@ -618,5 +682,8 @@ footer {
 
   .about-card p {
     width: 90%;
+  }
+  .sub-logo {
+    display: none;
   }
 }
