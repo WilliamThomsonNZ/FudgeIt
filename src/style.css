@@ -1,15 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
+  font-family: "Comfortaa", cursive;
   color: var(--dark);
   scroll-behavior: smooth;
 }
-
+body {
+  visibility: hidden;
+}
 :root {
   --accent: #ec1b5b;
   --dark: #603813;
@@ -19,6 +21,7 @@ header {
   background: #ec1b5b;
   width: 100%;
   height: 6vh;
+  min-height: 40px;
   color: #f2cbd7;
 }
 
@@ -45,7 +48,7 @@ header {
   height: 94vh;
   background: url("imgs/hero.jpg");
   background-position: center;
-  background-attachment: fixed;
+
   background-size: cover;
   position: relative;
 }
@@ -60,6 +63,26 @@ header {
   height: 100%;
   margin: 0 auto;
   position: relative;
+}
+
+.intro-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--lgt-bg);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--dark);
+  flex-direction: column;
+}
+.intro-animation span {
+  font-family: "Chewy", cursive;
+  letter-spacing: 2px;
 }
 
 /* ----------------------------------------MOBILE MENU------------------------ */
@@ -83,11 +106,11 @@ header {
 }
 
 .side-nav a {
-  color: #000;
+  color: var(--dark);
   text-decoration: none;
-
   font-size: 2rem;
   transition: all 0.1s ease;
+  font-family: "Chewy", cursive;
 }
 
 #close-btn {
@@ -182,8 +205,9 @@ nav a {
   font-weight: bolder;
   display: inline-block;
   letter-spacing: 5px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   transition: all 0.5s ease;
+  font-family: "Chewy", cursive;
 }
 
 .socials {
@@ -268,12 +292,12 @@ nav a:hover {
   z-index: 99;
 }
 .pattern h2 {
-  font-weight: bold;
   font-size: 2.5rem;
   position: relative;
   margin-bottom: 2rem;
   margin-top: 3rem;
   letter-spacing: 3px;
+  font-family: "Chewy", cursive;
 }
 
 .pattern h2::after {
@@ -291,7 +315,7 @@ nav a:hover {
 
 .about-grid {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 6rem;
   padding-bottom: 5rem;
 }
@@ -318,6 +342,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 33.33%;
 }
 
 .about-card:nth-child(2) {
@@ -329,7 +354,8 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 .about-card p {
-  width: 60%;
+  width: 75%;
+  line-height: 1.6;
 }
 
 /* -----------------------------------------------shop------------------------
@@ -337,7 +363,6 @@ nav a:hover {
 
 #shop {
   width: 100%;
-
   position: relative;
   overflow: hidden;
   background-color: var(--lgt-bg);
@@ -355,18 +380,18 @@ nav a:hover {
 .shop-container {
   margin-top: 10rem;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .shop-container img {
-  width: 55%;
+  width: 50%;
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .shop-text {
   background-color: #fff;
-  padding: 3rem 3rem 10rem 3rem;
-  height: 80%;
-  margin: auto 0;
+  padding: 3rem;
 }
 
 .shop-text h2 {
@@ -374,6 +399,7 @@ nav a:hover {
   letter-spacing: 3px;
   position: relative;
   margin-bottom: 2rem;
+  font-family: "Chewy", cursive;
 }
 
 .shop-text h2::after {
@@ -385,6 +411,27 @@ nav a:hover {
   border-radius: 10px;
   bottom: -20%;
   left: 0;
+}
+.shop-text p {
+  margin-top: 3rem;
+  line-height: 1.6;
+}
+
+.shop-text h3 {
+  margin: 2rem 0 1rem 0;
+}
+
+.shop-text li {
+  list-style: none;
+  margin: 1rem 0;
+}
+.shop-text li::before {
+  content: "";
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-image: url("imgs/chocolate-fudge.svg");
+  margin-right: 0.5rem;
 }
 /* -----------------------------------------carousel----------------------------- */
 
@@ -525,6 +572,7 @@ footer {
 .sub-logo h2 {
   font-size: 2.5rem;
   letter-spacing: 3px;
+  font-family: "Chewy", cursive;
 }
 .contact-details {
   position: relative;
@@ -609,6 +657,9 @@ footer {
   .about-grid {
     display: block;
   }
+  .about-card {
+    width: 100%;
+  }
   .about-container {
     width: 70%;
     overflow: hidden;
@@ -667,6 +718,9 @@ footer {
   }
 }
 @media (max-width: 500px) {
+  .intro-animation {
+    font-size: 2rem;
+  }
   .about-container {
     width: 100%;
   }
@@ -685,5 +739,15 @@ footer {
   }
   .sub-logo {
     display: none;
+  }
+
+  .top-header p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .intro-animation {
+    font-size: 1.5rem;
   }
 }

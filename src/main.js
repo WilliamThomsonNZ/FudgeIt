@@ -1,7 +1,52 @@
-const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+// const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
-tl.to(".nav-animation", { y: "0%", duration: 0.3, stagger: 0.3 });
-tl.to(".i-animation", { y: "0%", duration: 0.3, stagger: 0.3 });
+// tl.to(".nav-animation", { y: "0%", duration: 0.3, stagger: 0.3 });
+// tl.to(".i-animation", { y: "0%", duration: 0.3, stagger: 0.3 });
+
+//intro Animation
+
+const tl = gsap.timeline();
+gsap.to("body", { duration: 0, css: { visibility: "visible" } });
+
+tl.from(".intro-animation span", {
+  duration: 1,
+  opacity: 0,
+  y: 100,
+  ease: "power4.out",
+  delay: 0.8,
+  skewY: 7,
+})
+  // .from(".intro-animation img", {
+  //   duration: 1,
+  //   ease: "power4.out",
+  //   opacity: 0,
+  // })
+  .to(".intro-animation-element", {
+    opacity: 0,
+    duration: 2,
+    ease: "expo.inOut",
+  })
+  .to(".intro-animation-drip", {
+    duration: 5,
+    ease: "expo.inOut",
+    y: "100%",
+    delay: -2.3,
+  })
+
+  .to(".intro-animation", {
+    y: "100%",
+    duration: 2,
+    delay: -3.5,
+
+    ease: "expo.inOut",
+  })
+  .to(".nav-animation", {
+    y: 0,
+    ease: "power4.out",
+    duration: 1,
+    delay: -3,
+    stagger: 0.3,
+  });
 
 //Mobile Menu
 const menuBtn = document.querySelector(".pop-menu"),
