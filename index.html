@@ -140,11 +140,11 @@
 
             <h3>We have fudge for every occasion:</h3>
             <ul>
-              <li>Corporate Gift Ideas</li>
-              <li>Birthday Party Favours</li>
-              <li>Holidays and Special Occasions</li>
-              <li>Dessert Platters</li>
-              <li>Gift Boxes</li>
+              <li><span>Corporate Gift Ideas</span></li>
+              <li><span>Birthday Party Favours</span></li>
+              <li><span>Holidays and Special Occasions</span></li>
+              <li><span>Dessert Platters</span></li>
+              <li><span>Gift Boxes</span></li>
             </ul>
           </div>
           <img
@@ -176,24 +176,24 @@
             Please fill out the form below or email us at
             <a href="mailto:sales@fudgeit.co.nz">sales@fudgeit.co.nz</a>
           </p>
-          <form class="contact-form">
+          <form class="contact-form" method="POST" id="contact-form">
             <label>
               Full Name*
-              <input type="text" name="name" />
+              <input type="text" name="name" required />
             </label>
             <label>
               Business Name
-              <input type="text" name="business-name" />
+              <input type="text" name="business" />
             </label>
             <label>
               Email*
-              <input type="Email" name="email" />
+              <input type="Email" name="email" required />
             </label>
             <label class="message-box">
               Message*
-              <textarea name="message"></textarea>
+              <textarea name="message" required></textarea>
             </label>
-            <button>Send</button>
+            <button id="contactBtn">Send</button>
           </form>
         </div>
       </section>
@@ -290,6 +290,15 @@
     <script src="src/main.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_8lhkks9Hk10GylyFDHWmG");
+      })();
     </script>
   </body>
 </html>

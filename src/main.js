@@ -75,3 +75,20 @@ sideNav.addEventListener("click", (e) => {
     sideList.style.opacity = "0";
   }
 });
+
+//Form
+document.getElementById("contact-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  (async () => {
+    const form = document.getElementById("contactBtn");
+    form.innerHTML = "<img src='src/imgs/loading3.svg'/>";
+    await emailjs.sendForm("fudgeit", "fudgeit", "#contact-form");
+    form.innerHTML = "&#10003;";
+    setTimeout(() => {
+      form.innerHTML = "Send";
+    }, 2500);
+  })().catch((err) => {
+    console.log(err);
+  });
+  event.target.reset();
+});
